@@ -40,6 +40,16 @@ for (int i = 0; i < maxDigits; i++) {
 }
 scripts.Add(resetInternalScript.ToInternal().ToString());
 
+scripts.Add(new Script("seizure_warning", [
+    "say(5)",
+    "WARNING: ",
+    "The following room contains",
+    "flashing images. This can be",
+    "disabled by turning off screen",
+    "effects in the game options.",
+    "destroy(disappear)"
+]).ToString());
+
 scripts.Add(new Script("render", [
     $"iftrinkets(0,render_{new string('x', maxDigits)})"
 ]).ToString());
